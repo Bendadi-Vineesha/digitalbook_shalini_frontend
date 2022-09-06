@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <span><a mat-icon-button  routerLink="/"> DigitalBook  </a></span>
+    <span><a mat-icon-button *ngIf="!loggedIn" routerLink="/readerrepository" style="margin: 40px"> ReaderRepository  </a></span>
+    <span><a mat-icon-button *ngIf="!loggedIn" routerLink="/readerinvoice" style="margin: 40px"> ReaderInvoice  </a></span>
+    <!--<span><a mat-icon-button  routerLink="/"> DigitalBook  </a></span>
+    <a *ngIf="loggedIn" (click)="author()" mat-icon-button style="margin: 20px;"> author </a>
+    -->
+
+    <span class="example-spacer"></span>
+<a     *ngIf="!loggedIn" mat-icon-button  routerLink="/login"  style="margin: 20px;"> Login </a>
+<a     *ngIf="!loggedIn" mat-icon-button  routerLink="/readerdashboard" style="margin: 20px;"> Books </a>
+ <!--<a *ngIf="loggedIn"  mat-icon-button routerLink="/createBook" style="margin: 20px;"> CreateBook </a>
+    <a *ngIf="loggedIn" mat-icon-button style="margin: 20px;"> username </a>
+    --> 
+    <a *ngIf="!loggedIn" mat-icon-button  routerLink="/registration" style="margin: 20px;"> Register </a>
+    <a *ngIf="loggedIn" (click)="logoutUser()" mat-icon-button style="margin: 20px;"> Logout </a>
+</mat-toolbar>

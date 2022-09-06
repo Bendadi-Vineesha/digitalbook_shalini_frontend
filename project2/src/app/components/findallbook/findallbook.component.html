@@ -1,0 +1,22 @@
+<div *ngFor="let bookss of books" style="max-width: 400px; margin: auto; padding: 1em;">
+    <mat-card  >
+        <mat-card-title>
+            Title: {{bookss.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+           Author: {{bookss.author}}
+        </mat-card-subtitle>
+        <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+        <mat-card-content>
+            <p>Price:{{bookss.price}} Category:{{bookss.category}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="subscribeBook(bookss.id)">Subscribe</button>
+            
+        </mat-card-actions>
+        <mat-card-footer>
+            <div></div>
+        </mat-card-footer>
+
+    </mat-card>
+</div>

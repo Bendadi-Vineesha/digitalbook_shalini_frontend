@@ -1,0 +1,64 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                              
+                        <table border="1" class="container text-center mt">
+                            <tr>
+                        <td><input #email name="email" required="required" type="email" placeholder="enter your email" matInput /></td>
+                        
+                        <td>  <button type="submit" mat-raised-button color="primary" (click)="readerInvoiceDetail(email.value)">ReadersInvoice</button></td>
+                            
+                    </tr>
+                    </table>
+
+                    
+    
+    </div>
+    
+  </div>
+</div>
+
+<br>
+
+<table class="table" border="1" margin-top="10px" >
+    <thead class="thead-dark" color="primary">
+      <tr>
+        
+            <th scope="col">payId</th>
+            <th scope="col">readerEmail</th>
+            <th scope="col">readerName</th>
+            <th scope="col">payTime</th>
+            <th scope="col">book_id</th>
+            <th scope="col">action</th>
+
+            
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bookss of readerInvoice">
+            
+            
+            <td>{{bookss.payId}}</td>
+            <td>{{bookss.readerEmail}}</td>
+            <td>{{bookss.readerName}}</td>
+            <td>{{bookss.payTime}}</td>
+            <td>{{bookss.book_id}}</td>
+            <td><button (click)="read(bookss.book_id)">read</button></td>
+            
+            
+             </tr>
+    </tbody>
+  </table>
+<br>
+
+  <div *ngIf="flag" >
+      <p>content: {{readercontent}}</p>
+  </div>
+  <div *ngIf="flag1" >
+    <p>This book is currently being blocked by it's author</p>
+</div>
+</div>
+
+

@@ -1,0 +1,197 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt" >
+        <h1>Welcome to Book panel!!</h1>
+        
+        <button routerLink="/findallbook" mat-raised-button color="primary">FindAllBooks</button><br>
+        <!--<button routerLink="/findauthorbook" mat-raised-button color="primary" style="margin-top: 20px;">Find Your Book Collection</button>
+        -->
+    </div>
+
+</div>
+
+
+
+
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                              
+                        <table border="1" class="container text-center mt">
+                            <tr>
+                        <td><input #author name="author" required="required" type="text" placeholder="search by author" matInput /></td>
+                        <td>  <button type="submit" mat-raised-button color="primary" (click)="findBookByAuthor(author.value)">FindBookByAuthor</button></td>
+                            <td><button type="submit" mat-raised-button color="primary" (click)="reloadpage()">ClearFilter</button></td>
+                    </tr>
+                    </table>
+        </div>
+        <div></div>
+
+  <div>
+
+    <div *ngFor="let bookss of bookresultbyauthor" style="max-width: 400px; margin: auto; padding: 1em;">
+        <mat-card  >
+            <mat-card-title>
+                Title: {{bookss.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               Author: {{bookss.author}}
+            </mat-card-subtitle>
+            <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+            <mat-card-content>
+                <p>Price:{{bookss.price}} Category:{{bookss.category}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="subscribeBook(bookss.id)">Subscribe</button>
+               
+            </mat-card-actions>
+            <mat-card-footer>
+                <div></div>
+            </mat-card-footer>
+    
+        </mat-card>
+    </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                              
+                        <table border="1" class="container text-center mt">
+                            <tr>
+                        <td><input #publisher name="title" required="required" type="text" placeholder="search by publisher" matInput /></td>
+                        <td>  <button type="submit" mat-raised-button color="primary" (click)="findBookByPublisher(publisher.value)">FindBookByPublisher</button></td>
+                            <td><button type="submit" mat-raised-button color="primary" (click)="reloadpage()">ClearFilter</button></td>
+                    </tr>
+                    </table>
+        </div>
+
+        <div></div>
+
+  <div>
+
+    <div *ngFor="let bookss of bookresultbypublisher" style="max-width: 400px; margin: auto; padding: 1em;">
+        <mat-card  >
+            <mat-card-title>
+                Title: {{bookss.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               Author: {{bookss.author}}
+            </mat-card-subtitle>
+            <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+            <mat-card-content>
+                <p>Price:{{bookss.price}} Category:{{bookss.category}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="subscribeBook(bookss.id)">Subscribe</button>
+                
+            </mat-card-actions>
+            <mat-card-footer>
+                <div></div>
+            </mat-card-footer>
+    
+        </mat-card>
+    </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                              
+                        <table border="1" class="container text-center mt">
+                            <tr>
+                        <td><input #price name="price" required="required" type="text" placeholder="search by publisher" matInput /></td>
+                        <td>  <button type="submit" mat-raised-button color="primary" (click)="findBookByPrice(price.value)">FindBookByPrice</button></td>
+                            <td><button type="submit" mat-raised-button color="primary" (click)="reloadpage()">ClearFilter</button></td>
+                    </tr>
+                    </table>
+        </div>
+
+        <div></div>
+
+  <div>
+
+    <div *ngFor="let bookss of bookresultbyprice" style="max-width: 400px; margin: auto; padding: 1em;">
+        <mat-card  >
+            <mat-card-title>
+                Title: {{bookss.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               Author: {{bookss.author}}
+            </mat-card-subtitle>
+            <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+            <mat-card-content>
+                <p>Price:{{bookss.price}} Category:{{bookss.category}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="subscribeBook(bookss.id)">Subscribe</button>
+               
+            </mat-card-actions>
+            <mat-card-footer>
+                <div></div>
+            </mat-card-footer>
+    
+        </mat-card>
+    </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                              
+                        <table border="1" class="container text-center mt">
+                            <tr>
+                        <td><input #category name="category" required="required" type="text" placeholder="search by category" matInput /></td>
+                        <td>  <button type="submit" mat-raised-button color="primary" (click)="findBookByCategory(category.value)">FindBookByCategory</button></td>
+                            <td><button type="submit" mat-raised-button color="primary" (click)="reloadpage()">ClearFilter</button></td>
+                    </tr>
+                    </table>
+        </div>
+
+        <div></div>
+
+  <div>
+
+    <div *ngFor="let bookss of bookresultbycategory" style="max-width: 400px; margin: auto; padding: 1em;">
+        <mat-card  >
+            <mat-card-title>
+                Title: {{bookss.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               Author: {{bookss.author}}
+            </mat-card-subtitle>
+            <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+            <mat-card-content>
+                <p>Price:{{bookss.price}} Category:{{bookss.category}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="subscribeBook(bookss.id)">Subscribe</button>
+                
+            </mat-card-actions>
+            <mat-card-footer>
+                <div></div>
+            </mat-card-footer>
+    
+        </mat-card>
+    </div>
+        </div>
+    </div>
+    
+  </div>
+</div>

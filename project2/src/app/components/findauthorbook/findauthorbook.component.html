@@ -1,0 +1,34 @@
+
+
+<table class="table" border="1" margin-top="10px">
+    <thead class="thead-dark" color="primary">
+      <tr>
+        <th>Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">author</th>
+            <th scope="col">publisher</th>
+            <th scope="col">publishdate</th>
+            <th scope="col">block</th>
+            <th scope="col">category</th>
+            <th scope="col">content</th>
+            <th scope="col">price</th>
+            <th scope="col">actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bookss of books">
+            <th scope="row">{{bookss.id}}</th>
+            
+            <td>{{bookss.title}}</td>
+            <td>{{bookss.author}}</td>
+            <td>{{bookss.publisher}}</td>
+            <td>{{bookss.publishDate}}</td>
+            <td>{{bookss.block}}</td>
+            <td>{{bookss.category}}</td>
+            <td>{{bookss.content}}</td>
+            <td>{{bookss.price}}</td>
+            <td><button mat-raised-button color="primary" (click)="updateBook(bookss.id)" class="btn btn-info">Update</button></td>
+             </tr>
+    </tbody>
+  </table>

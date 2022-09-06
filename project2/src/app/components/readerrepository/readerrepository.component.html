@@ -1,0 +1,77 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                              
+                        <table border="1" class="container text-center mt">
+                            <tr>
+                        <td><input #email name="email" required="required" type="email" placeholder="enter your email" matInput /></td>
+                        <td>  <button type="submit" mat-raised-button color="primary" (click)="readerRepository(email.value)">ReadersBook</button></td>
+                        
+                    </tr>
+                    </table>
+
+                    <div *ngIf="flagforfailure" >
+                         Can't be unsubscribed after 24 hours</div>
+                        
+                    <div *ngIf="flagforsuccess" color="green"> unsubscribed successfull</div>
+       
+       
+
+  <div>
+
+    <div *ngFor="let bookss of readerBook" style="max-width: 400px; align:text-center auto; padding: 1em;">
+       <mat-card *ngIf="(bookss.block != 'Yes')">
+            <mat-card-title>
+                Title: {{bookss.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               Author: {{bookss.author}}
+            </mat-card-subtitle>
+            <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+            
+            
+            <mat-card-content>
+                <p>Price:{{bookss.price}} Category:{{bookss.category}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <!-- <button>Subscribe</button>-->
+              
+                <button (click)="unSubscribe(bookss.id)">UnSubscribe</button> 
+            </mat-card-actions>
+            <mat-card-footer>
+               <!-- <div>content:{{book1.content}}</div>-->
+            </mat-card-footer>
+    
+        </mat-card>
+        <!--nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn-->
+        <mat-card *ngIf="(bookss.block == 'Yes')">
+            <mat-card-title>
+                Title: {{bookss.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                Author: {{bookss.author}}
+            </mat-card-subtitle>
+            <!--<img class="img-fluid" style="width: 100px;" src="/assets/book.png">-->
+            <mat-card-content>
+                <p>Book has been blocked by author</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <!-- <button>Subscribe</button>-->
+                <button (click)="unSubscribe(bookss.id)">UnSubscribe</button> 
+            </mat-card-actions>
+            <mat-card-footer>
+                
+            </mat-card-footer>
+    
+        </mat-card>
+
+        
+    </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+
